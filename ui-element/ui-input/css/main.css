@@ -1,0 +1,306 @@
+/* Цветовая тема типографика*/
+body[data-theme='light'] {
+  --bg-color-primary: #ffffff;
+  --bg-color-secondary: #f1f1f1;
+  --bg-color-form: #ffffff;
+  --bg-color-hover: #849bdbbd;
+  --input-bg: #fff;
+  --text-color-primary: #263659;
+  --text-color-secondary: #4c4c4ce4;
+  --border-color: #6c757d;
+  --border-color-secondary: #4c4c4ce4;
+  --border-color-focus: #4778eb;
+  --btn-bg: #007bff;
+  --btn-hover: #0056b3;
+}
+
+body[data-theme='dark'] {
+  --bg-color-primary: #1a1a1a;
+  --bg-color-secondary: #262626;
+  --bg-color-form: #262626;
+  --bg-color-hover: #849bdbbd;
+  --input-bg: #2c2c3e;
+  --text-color-primary: #e6e6e6;
+  --text-color-secondary: #999999;
+  --border-color: #999;
+  --border-color-secondary: #4c4c4ce4;
+  --border-color-focus: #4778eb;
+  --btn-bg: #4c7ef3;
+  --btn-hover: #365ac0;
+  --icon-filter: invert(1);
+}
+
+body {
+  background: var(--bg-color-primary);
+  color: var(--text-color-primary);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ui-container {
+  background-color: var(--bg-color-form);
+  padding: 2rem;
+  max-width: 480px;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0px 1px 4px #0000004d;
+}
+
+/* Переключатель темы */
+.ui-theme-toggle {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  z-index: 10;
+}
+
+.ui-theme-toggle .btn {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color-secondary);
+  background: var(--bg-color-form);
+  border-radius: 50%;
+}
+
+.ui-theme-icon {
+  width: 18px;
+  height: 18px;
+  filter: var(--icon-filter, none);
+}
+
+/* Логотип svg */
+.logo {
+  max-width: 120px;
+}
+
+body[data-theme='dark'] img[alt='Логотип'] {
+  filter: brightness(1.5);
+}
+
+.ui-h1 {
+  font-size: 18px;
+  color: var(--text-color-primary);
+}
+
+/* Стилизация Инпутов */
+.ui-input,
+.ui-select {
+  width: 100%;
+  padding: 8px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: var(--bg-color-form);
+  font-size: 14px;
+  color: var(--text-color-primary);
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.ui-input::placeholder {
+  color: var(--text-color-secondary);
+  opacity: 1;
+}
+
+.ui-input:focus,
+.ui-select:focus {
+  box-shadow: none !important;
+  border: 1px solid var(--border-color-focus);
+  /* border-color: #007bff; */
+}
+
+/* Стилизация Селекта */
+.ui-selectpicker {
+  position: relative;
+}
+
+/* Стилизация Селекта Label*/
+.ui-selectpicker .ui-floating-label {
+  position: absolute;
+  top: -10px;
+  left: 12px;
+  background-color: var(--bg-color-form);
+  padding: 0 4px;
+  font-size: 12px;
+  color: var(--text-color-secondary);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ui-selectpicker .dropdown-toggle {
+  position: relative;
+  display: block;
+  padding: 10px 16px 6px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: var(--bg-color-form);
+  color: var(--text-color-primary);
+  transition: border-color 0.3s;
+  font-size: 14px;
+  box-shadow: none;
+  z-index: 0;
+}
+
+.ui-selectpicker .bootstrap-select > .dropdown-toggle.bs-placeholder {
+  color: var(--text-color-secondary) !important;
+}
+
+.ui-selectpicker .dropdown-toggle:focus {
+  border: 1px solid var(--border-color-focus);
+  background-color: var(--bg-color-form);
+  outline: none !important;
+  box-shadow: none !important;
+  outline: none;
+}
+
+.ui-selectpicker .dropdown-menu {
+  border: 1px solid var(--border-color-focus);
+  background-color: var(--bg-color-form);
+  max-height: 400px;
+  font-size: 14px;
+}
+
+.ui-selectpicker .bootstrap-select {
+  width: 100% !important;
+}
+
+.ui-selectpicker .bootstrap-select .dropdown-toggle {
+  width: 100% !important;
+}
+
+/* Отступ стрелочки A select */
+.ui-selectpicker .bootstrap-select .dropdown-toggle::after {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+  pointer-events: none;
+}
+
+.ui-selectpicker .dropdown-menu li a {
+  /* background-color: var(--border-color-focus); */
+  color: var(--text-color-primary);
+}
+
+.ui-selectpicker .dropdown-menu li a:hover {
+  background-color: var(--bg-color-hover);
+  color: var(--text-color-primary);
+}
+
+.ui-selectpicker .dropdown-menu li a.active,
+.ui-selectpicker .dropdown-menu li a.selected {
+  background-color: var(--bg-color-hover);
+  color: var(--text-color-primary);
+}
+
+/* Стилизация Кнопки Войти */
+.ui-button {
+  background-color: var(--btn-bg);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.ui-button:hover {
+  background-color: var(--btn-hover);
+}
+
+.ui-footer {
+  color: var(--text-color-secondary);
+}
+
+/* Стилизация ui-dropdown */
+.ui-dropdown {
+  position: relative;
+}
+
+/* Стилизация dropdown Label*/
+.ui-dropdown .ui-floating-label {
+  position: absolute;
+  top: -10px;
+  left: 12px;
+  background-color: var(--bg-color-form);
+  padding: 0 4px;
+  font-size: 12px;
+  color: var(--text-color-secondary);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ui-dropdown-input {
+  width: 100%;
+  padding: 10px 16px 6px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: var(--bg-color-form);
+  color: var(--text-color-primary);
+  transition: border-color 0.3s;
+  font-size: 14px;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.ui-dropdown-input::placeholder {
+  color: var(--text-color-secondary);
+  opacity: 1;
+}
+
+.ui-dropdown-input:focus {
+  border: 1px solid var(--border-color-focus);
+  background-color: var(--bg-color-form);
+  color: var(--text-color-primary);
+  outline: none !important;
+  box-shadow: none !important;
+  outline: none;
+}
+
+.ui-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 0;
+  right: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: var(--bg-color-form);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  z-index: 10;
+  display: none;
+}
+
+.ui-dropdown-menu.show {
+  display: block;
+}
+
+.ui-dropdown-group-title {
+  font-weight: 600;
+  padding: 8px 12px;
+  background-color: var(--bg-color-form);
+  color: var(--text-color-primary);
+  font-size: 14px;
+  cursor: default;
+}
+
+.ui-dropdown-group:not(:first-child) .ui-dropdown-group-title {
+  border-top: 1px solid var(--border-color);
+}
+
+.ui-dropdown-item {
+  padding: 8px 12px;
+  background-color: var(--bg-color-form);
+  color: var(--text-color-primary);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.ui-dropdown-item:hover {
+  background-color: var(--bg-color-hover);
+}
