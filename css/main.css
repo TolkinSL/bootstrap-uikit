@@ -294,6 +294,7 @@ body {
 
 .ui-selectpicker .dropdown-toggle:focus {
   border: 1px solid var(--border-color-focus);
+  color: var(--text-color-primary);
   background-color: var(--bg-color-form);
   outline: none !important;
   box-shadow: none !important;
@@ -415,6 +416,7 @@ body {
 }
 
 .ui-dropdown-input:focus {
+  color: var(--text-color-primary);
   border: 1px solid var(--border-color-focus);
   background-color: var(--input-bg);
   outline: none !important;
